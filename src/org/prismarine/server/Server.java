@@ -1,6 +1,7 @@
 package org.prismarine.server;
 
 import net.minecraft.server.MinecraftServer;
+import org.apache.logging.log4j.core.config.plugins.Plugin;
 import org.prismarine.server.plugins.PluginManager;
 import org.prismarine.server.util.Logger;
 
@@ -26,9 +27,6 @@ public class Server implements org.prismarine.api.Server{
             //initialize the minecraft server
             MinecraftServer.main(options);
             nms = MinecraftServer.getServer();
-            //TODO: put this in MinecraftServer.s() (Latest process after world reloading)
-            //initialize plugins
-            new PluginManager();
         } catch(Exception ex){
             ex.printStackTrace();
         }
@@ -109,5 +107,9 @@ public class Server implements org.prismarine.api.Server{
     @Override
     public String getServerVersion() {
         return nms.getVersion();
+    }
+
+    public static void initPlugins(){
+        pluginManager = new PluginManager();
     }
 }
