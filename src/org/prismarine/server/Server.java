@@ -11,8 +11,11 @@ public class Server implements org.prismarine.api.Server{
 
     private static MinecraftServer nms;
     private static PluginManager pluginManager;
+    private static long startedTime;
+
 
     public static void main(String[] _options) {
+        startedTime = System.currentTimeMillis();
         try {
             //temporarily option to prevent using gui
             String[] options = new String[1 + _options.length];
@@ -39,8 +42,8 @@ public class Server implements org.prismarine.api.Server{
     }
 
     @Override
-    public int getServerUptime() {
-        return 0;
+    public long getServerUptime() {
+        return startedTime - System.currentTimeMillis();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.prismarine.server.plugins.js;
 
+import org.prismarine.api.plugin.PluginManagerBase;
 import org.prismarine.server.util.Logger;
 import org.prismarine.api.plugin.JavascriptPluginBase;
 import org.prismarine.server.util.PluginLogger;
@@ -11,7 +12,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class JavaScriptPluginManager {
+public class JavaScriptPluginManager implements PluginManagerBase{
 
     private File jsPluginDir;
     private ArrayList<JavascriptPlugin> jsPlugins;
@@ -44,6 +45,7 @@ public class JavaScriptPluginManager {
         }
     }
 
+    @Override
     public void addPlugin(FileReader pluginFile, String name){
         String extension = "js";
         ScriptEngine engine = factory.getEngineByExtension(extension);
@@ -80,7 +82,8 @@ public class JavaScriptPluginManager {
         }
     }
 
-    public File getPluginDir(){
+    @Override
+    public File getPluginsDir(){
         return jsPluginDir;
     }
 
