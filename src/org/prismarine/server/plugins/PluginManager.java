@@ -11,6 +11,7 @@ public class PluginManager {
     private JavaScriptPluginManager javascriptMgr;
 
     public PluginManager(){
+        //TODO: generate a central map or something with <Name, org.prismarine.api.plugins.Plugin
         this.pluginDir = new File("/plugins");
         //check if directories exist.
         if (!pluginDir.exists()){

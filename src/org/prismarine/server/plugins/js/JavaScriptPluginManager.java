@@ -2,6 +2,7 @@ package org.prismarine.server.plugins.js;
 
 import org.prismarine.server.util.Logger;
 import org.prismarine.api.plugin.JavascriptPluginBase;
+import org.prismarine.server.util.PluginLogger;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -50,6 +51,9 @@ public class JavaScriptPluginManager {
         try {
             //create a new plugin
             JavascriptPlugin plugin = new JavascriptPlugin(pluginFile, name);
+
+            //put classes that are allowed to use by plugins
+            engine.put("Logger", new PluginLogger());
 
             //eval the plugin js
             engine.eval(pluginFile);
