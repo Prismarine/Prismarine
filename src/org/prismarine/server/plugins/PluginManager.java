@@ -20,7 +20,7 @@ public class PluginManager {
 
         //initialize javascript's plugin manager
         this.javascriptMgr = new JavaScriptPluginManager(pluginDir);
-        Logger.write("Loaded " + javascriptMgr.getJsPluginCount() + " javascript plugins");
+        Logger.write("Loaded " + javascriptMgr.getJsPluginCount() + " javascript plugins", "PluginManager");
     }
 
     public File getPluginsFolder(){

@@ -14,14 +14,9 @@ public class Server implements org.prismarine.api.Server{
     private static long startedTime;
 
 
-    public static void main(String[] _options) {
+    public static void main(String[] options) {
         startedTime = System.currentTimeMillis();
         try {
-            //temporarily option to prevent using gui
-            String[] options = new String[1 + _options.length];
-            //convert _options to our new options here, TODO
-            options[0] = "nogui";
-
             //log start
             Logger.write("Starting prismarine server");
             Logger.write("Loading Minecraft Server...");
@@ -73,8 +68,7 @@ public class Server implements org.prismarine.api.Server{
 
     @Override
     public boolean hasWhitelist() {
-        //TODO: implement haswhitelist
-        return false;
+        return nms.getPlayerList().getHasWhitelist();
     }
 
     @Override
@@ -114,5 +108,9 @@ public class Server implements org.prismarine.api.Server{
 
     public static void initPlugins(){
         pluginManager = new PluginManager();
+    }
+
+    public static MinecraftServer getNms(){
+        return nms;
     }
 }

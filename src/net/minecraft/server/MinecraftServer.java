@@ -353,7 +353,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
                 long i = 0L;
 
                 this.r.setMOTD(new ChatComponentText(this.motd));
-                this.r.setServerInfo(new ServerPing.ServerData("1.8.6", 47));
+                this.r.setServerInfo(new ServerPing.ServerData("Prismarine-1.8.6", 47));
                 this.a(this.r);
 
                 while (this.isRunning) {
@@ -585,7 +585,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
         DispenserRegistry.c();
 
         try {
-            boolean flag = true;
+            boolean flag = false; //PRISMARINE, Always do nogui
             String s = null;
             String s1 = ".";
             String s2 = null;
@@ -702,7 +702,10 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
     }
 
     public String getVersion() {
-        return "1.8.6";
+        //PRISMARINE START
+        //return "1.8.6";
+        return "Prismarine-1.8.6";
+        //PRISMARINE END
     }
 
     public int I() {

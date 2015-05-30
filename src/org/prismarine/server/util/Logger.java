@@ -21,6 +21,15 @@ public class Logger {
     }
 
     /**
+     * Sends an info message to the console.
+     * @param msg The info message to send
+     * @param manager The manager name that sent this console message
+     */
+    public static void write(String msg, String manager){
+        System.out.println("[Prismarine][" + manager + "] " + msg);
+    }
+
+    /**
      * Sends an error message to the console.
      *
      * @param msg The error message to send

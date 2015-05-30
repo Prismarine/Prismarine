@@ -78,7 +78,7 @@ public class JavaScriptPluginManager implements PluginManagerBase{
         } catch (Exception ex){
             ex.printStackTrace();
         } finally {
-            Logger.write("[PluginManager] Loaded: " + name + "!");
+            Logger.write("Loaded: " + name + "!", "PluginManager");
         }
     }
 
