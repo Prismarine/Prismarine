@@ -37,4 +37,13 @@ public class Logger {
     public static void error(String msg){
         System.out.println("[Prismarine] " + msg);
     }
+
+    /**
+     * Sends an error message to the console.
+     *
+     * @param ex The exception to get the error message from
+     */
+    public static void error(Exception ex){
+        error(ex.getMessage());
+    }
 }

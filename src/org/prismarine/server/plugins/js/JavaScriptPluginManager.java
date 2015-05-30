@@ -1,9 +1,11 @@
 package org.prismarine.server.plugins.js;
 
 import org.prismarine.api.plugin.PluginManagerBase;
+import org.prismarine.api.plugin.PluginType;
 import org.prismarine.server.util.Logger;
 import org.prismarine.api.plugin.JavascriptPluginBase;
 import org.prismarine.server.util.PluginLogger;
+import org.prismarine.server.util.exceptions.PluginLoadException;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -41,7 +43,7 @@ public class JavaScriptPluginManager implements PluginManagerBase{
                 }
             }
         } catch(Exception ex){
-            ex.printStackTrace();
+            Logger.error(ex);
         }
     }
 
@@ -76,7 +78,8 @@ public class JavaScriptPluginManager implements PluginManagerBase{
             //add it to the ArrayList
             jsPlugins.add(plugin);
         } catch (Exception ex){
-            ex.printStackTrace();
+            ex = new PluginLoadException(name, PluginType.JAVASCRIPT);
+            Logger.error(ex);
         } finally {
             Logger.write("Loaded: " + name + "!", "PluginManager");
         }
