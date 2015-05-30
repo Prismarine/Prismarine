@@ -38,6 +38,7 @@ import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 //PRISMARINE START
+import org.prismarine.server.Prismarine;
 import org.prismarine.server.Server;
 //PRISMARINE END
 
@@ -271,7 +272,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
         this.g = 0;
 
         //PRISMARINE START
-        Server.initPlugins();
+        Prismarine.getServer().initPlugins();
         //PRISMARINE END
     }
 
@@ -585,7 +586,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
         DispenserRegistry.c();
 
         try {
-            boolean flag = false; //PRISMARINE, Always do nogui
+            boolean flag = false; //PRISMARINE, Always do nogui, normally true
             String s = null;
             String s1 = ".";
             String s2 = null;

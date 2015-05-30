@@ -1,6 +1,15 @@
 package org.prismarine.server.util;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Logger {
+
+    private static void log(String msg){
+        final DateFormat format = new SimpleDateFormat("HH:mm:ss");
+        System.out.println("[" + format.format(new Date()) + "] " + msg);
+    }
 
     /**
      * Sends a debug message to the console.
@@ -8,7 +17,7 @@ public class Logger {
      * @param msg The debug message to send
      */
     public static void debug(String msg){
-        System.out.println("[Prismarine][DEBUG] " + msg);
+        log("[Prismarine/DEBUG] " + msg);
     }
 
     /**
@@ -17,7 +26,7 @@ public class Logger {
      * @param msg The info message to send
      */
     public static void write(String msg){
-        System.out.println("[Prismarine] " + msg);
+        log("[Prismarine/INFO] " + msg);
     }
 
     /**
@@ -26,7 +35,7 @@ public class Logger {
      * @param manager The manager name that sent this console message
      */
     public static void write(String msg, String manager){
-        System.out.println("[Prismarine][" + manager + "] " + msg);
+        log("[Prismarine/INFO][" + manager + "] " + msg);
     }
 
     /**
@@ -35,7 +44,7 @@ public class Logger {
      * @param msg The error message to send
      */
     public static void error(String msg){
-        System.out.println("[Prismarine] " + msg);
+        log("[Prismarine/ERROR] " + msg);
     }
 
     /**

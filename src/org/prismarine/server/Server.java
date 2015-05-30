@@ -1,7 +1,6 @@
 package org.prismarine.server;
 
 import net.minecraft.server.MinecraftServer;
-import org.apache.logging.log4j.core.config.plugins.Plugin;
 import org.prismarine.server.plugins.PluginManager;
 import org.prismarine.server.util.Logger;
 
@@ -9,12 +8,12 @@ import java.io.File;
 
 public class Server implements org.prismarine.api.Server{
 
-    private static MinecraftServer nms;
-    private static PluginManager pluginManager;
-    private static long startedTime;
+    private MinecraftServer nms;
+    private PluginManager pluginManager;
+    private long startedTime;
 
 
-    public static void main(String[] options) {
+    public void init(String[] options) {
         startedTime = System.currentTimeMillis();
         try {
             //log start
@@ -24,7 +23,7 @@ public class Server implements org.prismarine.api.Server{
             //always run minecraft server as the latest process
             //initialize the minecraft server
             MinecraftServer.main(options);
-            nms = MinecraftServer.getServer();
+            this.nms = MinecraftServer.getServer();
         } catch(Exception ex){
             ex.printStackTrace();
         }
@@ -106,11 +105,11 @@ public class Server implements org.prismarine.api.Server{
         return nms.getVersion();
     }
 
-    public static void initPlugins(){
+    public void initPlugins(){
         pluginManager = new PluginManager();
     }
 
-    public static MinecraftServer getNms(){
-        return nms;
+    public MinecraftServer getNms(){
+        return this.nms;
     }
 }

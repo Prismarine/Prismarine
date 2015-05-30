@@ -1,5 +1,7 @@
 package org.prismarine.server.plugins;
 
+import org.prismarine.server.Prismarine;
+import org.prismarine.server.Server;
 import org.prismarine.server.plugins.js.JavaScriptPluginManager;
 import org.prismarine.server.util.Logger;
 

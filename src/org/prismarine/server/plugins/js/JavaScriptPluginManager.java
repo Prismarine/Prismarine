@@ -2,6 +2,8 @@ package org.prismarine.server.plugins.js;
 
 import org.prismarine.api.plugin.PluginManagerBase;
 import org.prismarine.api.plugin.PluginType;
+import org.prismarine.server.Prismarine;
+import org.prismarine.server.Server;
 import org.prismarine.server.util.Logger;
 import org.prismarine.api.plugin.JavascriptPluginBase;
 import org.prismarine.server.util.PluginLogger;
@@ -19,6 +21,7 @@ public class JavaScriptPluginManager implements PluginManagerBase{
     private File jsPluginDir;
     private ArrayList<JavascriptPlugin> jsPlugins;
     private ScriptEngineManager factory;
+    public Server server;
 
     public JavaScriptPluginManager(File pluginsDir){
         Logger.write("Loading plugins...");
@@ -26,6 +29,7 @@ public class JavaScriptPluginManager implements PluginManagerBase{
         this.factory = new ScriptEngineManager();
         //put them all in an awesome list
         this.jsPlugins = new ArrayList<JavascriptPlugin>();
+        this.server = Prismarine.getServer();
 
         try {
             if(!this.jsPluginDir.exists()){
@@ -58,6 +62,7 @@ public class JavaScriptPluginManager implements PluginManagerBase{
 
             //put classes that are allowed to use by plugins
             engine.put("Logger", new PluginLogger());
+            engine.put("Server", server);
 
             //eval the plugin js
             engine.eval(pluginFile);
