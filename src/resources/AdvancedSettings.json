@@ -1,4 +1,5 @@
 {
-  "ItemDespawnTime" : "6000",
-  "ServerClosedMessage"  : "Server closed"
+    "Autosave"  : 6000
+  }
+
 }
