@@ -1,4 +1,17 @@
 {
+  "ServerClosedMessage"  : "Server closed",
+
+  "SpawnLimits" : {
+    "Monster" : 70,
+    "Animals" : 15,
+    "WaterMobs" : 5,
+    "Ambient" : 15
+  },
+
+  "Ticks" : {
+    "AnimalSpawn"  : 400,
+    "MonsterSpawn"  : 6000,
+    "ItemDespawn" : 6000,
     "Autosave"  : 6000
   }
 
