@@ -17,8 +17,13 @@ public class PlayerManager {
         this.nms = nms;
     }
 
+    //TODO: Checking
     public void addPlayer(EntityPlayer p){
         players.put(p, new PrismarinePlayer(p));
+    }
+    //TODO: Checking
+    public void removePrismarinePlayer(EntityPlayer p){
+        players.remove(p);
     }
 
     public Player getPlayer(UUID id){
