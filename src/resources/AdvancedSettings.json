@@ -3,15 +3,16 @@
 
   "SpawnLimits" : {
     "Monster" : 70,
-    "Animals" : 15,
+    "Animals" : 10,
     "WaterMobs" : 5,
     "Ambient" : 15
   },
 
   "Ticks" : {
     "AnimalSpawn"  : 400,
-    "MonsterSpawn"  : 6000,
+    "MonsterSpawn"  : 60,
     "ItemDespawn" : 6000,
+    "ExperienceOrbDespawn" : 6000,
     "Autosave"  : 6000
   }
 
