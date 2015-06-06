@@ -19,6 +19,8 @@ And we are planning on creating a packet manager that enables you to add a plugi
 ## Contributing
 More information on contributing to the prismarine project will be available soon, for now you can just contact me via email at ```prismarine@nickforall.nl```, or on twitter ```@nickforall__```
 
+NOTE: when using including nms code, please use Spigot's mappings for deobfuscation.
+
 ## Roadmap
 * [ ] Buy domain prismarine.org
 * [ ] setup IRC server
