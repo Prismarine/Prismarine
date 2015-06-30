@@ -4,6 +4,8 @@ Prismarine is an implementation of our Minecraft server API, called PrismarineAP
 
 NOTE: THIS IS EXTREMELY UNSTABLE SOFTWARE, WITH CODE THAT IS HEAVILY IN DEVELOPMENT.
 
+BECAUSE OF SCHOOL, I HAVE NOT HAD ENOUGH TIME TO WORK ON THIS PROJECT, SUMMER BREAK IN 2 WEEKS, WHERE I'll WORK ON THIS PROJECT.
+
 ## Plugins
 Creating a plugin in prismarine is as easy as this:
 ```javascript
